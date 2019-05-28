@@ -1,0 +1,12 @@
+LOCAL_HOST = 172.24.1.73
+UDP_PORT_MO = 5555
+UDP_PORT_MT1 = 5556
+UDP_PORT_MT2 = 5557
+RMS_HOST = 172.24.0.37
+msrp_message_to_be_sent = 4
+task_timeout = 300
+delay_between_successive_messages = 0.1
+fqdn = rcse-dls-capacity.mavenir.lab
+app_serv_port_start = [2000,4000,7000]
+app_serv_port_range = 20
+msrp_data_length = 200

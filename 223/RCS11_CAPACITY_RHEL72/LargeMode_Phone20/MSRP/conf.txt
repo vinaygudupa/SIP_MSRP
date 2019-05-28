@@ -1,0 +1,10 @@
+LOCAL_HOST = 172.24.3.231
+UDP_PORT_MO = 4494
+UDP_PORT_MT = 4495
+RMS_HOST = 172.24.0.37
+task_timeout = 20
+fqdn = rcse-dls-capacity.mavenir.lab
+app_serv_port_start = [2000,4000,7000]
+app_serv_port_range = 20
+Large_Data_Size = 1022000
+CHUNK_SIZE = 1024000

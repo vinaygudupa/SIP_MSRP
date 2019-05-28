@@ -1,0 +1,31 @@
+LOCAL_HOST -> fcff:1:256:172:24:1:0:74
+LOCAL_PORT -> 8090
+REMOTE_HOST -> fcff:1:256:172:24:3:0:190
+REMOTE_PORT -> 8090
+DEFAULT_FEATURE_TAG -> ;+g.access.3GPP-E-UTRAN-FDD;+g.3gpp.icsi-ref=\"urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.session,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.filetransfer,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.largemsg\";+g.3gpp.iari-ref=\"urn%3Aurn-7%3A3gpp-application.ims.iari.rcs.fthttp\";
+range_1 -> 1_1_Chat_TRMS_TERM         -- 6600000000 -- 100000 -- sip:[fcff:1:256:172:24:3:0:16]:5020
+range_2 -> 1_N_Chat_ORMS_ORIG         -- 5500230000 -- 10000  -- sip:[fcff:1:256:172:24:3:0:49]:5022
+range_3 -> 1_1_HTTP_FT_TRMS_TERM      -- 6600340000 -- 10000  -- sip:[fcff:1:256:172:24:3:0:51]:5220
+range_4 -> 1_N_HTTP_FT_ORMS_ORIG      -- 5500250000 -- 10000  -- sip:[fcff:1:256:172:24:3:0:49]:5220
+range_5 -> 1_1_PM_TRMS_ORIG           -- 5500110000 -- 10000  -- sip:[fcff:1:256:172:24:3:0:230]:5019
+range_6 -> 1_1_PM_TRMS_TERM           -- 6600110000 -- 10000  -- sip:[fcff:1:256:172:24:3:0:230]:5020
+range_7 -> 1_1_LM_TRMS_TERM           -- 6600120000 -- 10000  -- sip:[fcff:1:256:172:24:1:0:73]:5032
+range_8 -> 1_1_Chat_ORMS_ORIG         -- 5500130000 -- 100000 -- sip:[fcff:1:256:172:24:1:0:75]:6018
+range_9 -> 1_1_HTTP_FT_ORMS_ORIG      -- 5500350000 -- 10000  -- sip:[fcff:1:256:172:24:3:0:51]:6220
+range_10 -> 1_1_PM_ORMS_ORIG          -- 5500260000 -- 10000  -- sip:[fcff:1:256:172:24:3:0:230]:5040
+range_11 -> 1_1_PM_ORMS_TERM          -- 6600260000 -- 10000  -- sip:[fcff:1:256:172:24:3:0:230]:5041
+range_12 -> 1_1_LM_ORMS_ORIG          -- 5500270000 -- 10000  -- sip:[fcff:1:256:172:24:3:0:228]:5050
+range_13 -> 1_N_PM_ORMS_ORIG          -- 5500300000 -- 10000  -- sip:[fcff:1:256:172:24:3:0:230]:7040
+range_14 -> 1_N_LM_ORMS_ORIG          -- 5500310000 -- 10000  -- sip:[fcff:1:256:172:24:3:0:49]:7022
+range_15 -> REG                       -- 1100020000 -- 10000  -- sip:[fcff:1:256:172:24:1:0:75]:2001
+range_16 -> DEREG                     -- 1100000000 -- 10000  -- sip:[fcff:1:256:172:24:1:0:75]:2000
+range_17 -> RE_REG                    -- 1100010000 -- 10000  -- sip:[fcff:1:256:172:24:1:0:75]:2000
+range_18 -> PM_IMDN_TRMS_ORIG         -- 5500280000 -- 10000  -- sip:[fcff:1:256:172:24:1:0:76]:7718
+range_19 -> PM_IMDN_TRMS_TERM         -- 6600280000 -- 10000  -- sip:[fcff:1:256:172:24:1:0:76]:7719
+range_20 -> PM_IMDN_ORMS_ORIG         -- 5500290000 -- 10000  -- sip:[fcff:1:256:172:24:1:0:76]:7818
+range_21 -> PM_IMDN_ORMS_TERM         -- 6600290000 -- 10000  -- sip:[fcff:1:256:172:24:1:0:76]:7819
+range_22 -> GC_Fwd_TRMS_TERM          -- 4400000000 -- 10000  -- sip:[fcff:1:256:172:24:3:0:231]:8022
+range_23 -> Ph20_1_1_Chat_TRMS_TERM   -- 3322200000 -- 6000   -- sip:[fcff:1:256:172:24:3:0:227]:5020, sip:[fcff:1:256:172:24:3:0:227]:5020
+range_24 -> Ph20_1_1_Chat_ORMS_ORIG   -- 3322221000 -- 8000   -- sip:[fcff:1:256:172:24:3:0:227]:5024, sip:[fcff:1:256:172:24:3:0:227]:5024
+range_25 -> Ph20_1_N_GC_TRMS_TERM     -- 3322206000 -- 3000   -- sip:[fcff:1:256:172:24:3:0:228]:5020, sip:[fcff:1:256:172:24:3:0:228]:5020
+range_26 -> Ph20_1_N_GC_ORMS_ORIG     -- 3322229000 -- 3000   -- sip:[fcff:1:256:172:24:3:0:228]:8024, sip:[fcff:1:256:172:24:3:0:228]:8024

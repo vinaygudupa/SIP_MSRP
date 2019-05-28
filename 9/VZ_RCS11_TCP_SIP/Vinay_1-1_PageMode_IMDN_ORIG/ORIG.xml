@@ -1,0 +1,142 @@
+<?xml version=1.0 encoding=ISO-8859-1 ?>
+<!DOCTYPE scenario SYSTEM sipp.dtd>
+
+<scenario name="Out-of-call UAS">
+
+<nop>
+  <action>
+    <assignstr assign_to="Number" value="[field2]" />
+    <ereg regexp="([0-9]{8})([0-9]{2})" search_in="var" assign_to="FullNum,8Digit,2Digit" variable="Number" />
+  </action>
+</nop>
+
+  <send retrans="500">
+    <![CDATA[
+
+      MESSAGE sip:+1[field0]@rcse-dls-capacity.mavenir.lab SIP/2.0
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      From: <sip:+1[field2]@rcse-dls-capacity.mavenir.lab>;tag=[pid][call_number]
+      To: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab;user=phone>
+      Call-ID: 2005///[call_id]
+      User-Agent: CPM-client/OMA1.0 MSP/1.0
+      CSeq: [cseq] MESSAGE
+      Supported: join,replaces
+      Route: <sip:rcse-dls-capacity.mavenir.lab:5060;lr;orig>   
+      Route: <sip:[local_ip]:[field3];lr> 
+      Contact: <sip:[local_ip]:[local_port]>;+sip.instance="<urn:gsma:imei:[$8Digit]-[$2Digit]0000-0>";+g.3gpp.icsi-ref="urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg"
+      Allow: INVITE,UPDATE,ACK,CANCEL,BYE,NOTIFY,MESSAGE
+      P-Visited-Network-ID: rcse-dls-capacity.mavenir.lab
+      Max-Forwards: 68
+      Accept-Contact: *;+g.3gpp.icsi-ref="urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg"
+      P-Access-Network-Info: 3GPP-E-UTRAN-FDD
+      P-Asserted-Identity: "+1[field2]" <sip:+1[field2]@rcse-dls-capacity.mavenir.lab>
+      P-Charging-Function-Addresses: ecf="aaa://mavenir.lab";ecf="aaa://mavenir.lab"
+      P-Served-User: <sip:+1[field2]@rcse-dls-capacity.mavenir.lab>;sescase=orig;regstate=reg
+      Content-Type: message/cpim
+      Content-Length:[len]
+
+	From: sip:+1[field2]@rcse-dls-capacity.mavenir.lab
+	NS: imdn <urn:ietf:params:imdn>
+	imdn.Message-ID:Vinay
+	DateTime: 2015-11-30T17:50:35+05:30
+	To: sip:+1[field0]@rcse-dls-capacity.mavenir.lab
+	Original-To: sip:+1[field0]@rcse-dls-capacity.mavenir.lab
+	Content-Type: message/imdn+xml
+	Content-Disposition: notification
+	Content-Length: 443
+
+<?xml version="1.0" encoding="UTF-8"?>
+      <imdn xmlns="urn:ietf:params:xml:ns:imdn">
+      <message-id>Vinay</message-id>
+      <datetime>2015-11-30T17:50:35+05:30</datetime>
+      <recipient-uri>sip:+1[field0]@rcse-dls-capacity.mavenir.lab</recipient-uri>
+      <original-recipient-uri>sip:+1[field0]@rcse-dls-capacity.mavenir.lab</original-recipient-uri>
+      <delivery-notification>
+         <status>
+            <delivered/>
+         </status>
+      </delivery-notification>
+      </imdn>
+
+    ]]>
+  </send>
+
+ <recv response="403" optional="true" next="203">
+ </recv>
+
+ <recv response="200" next="203">
+ </recv>
+
+
+<!--label id="202"/>
+
+ <pause milliseconds="100"/>
+
+  <send retrans="500">
+    <![CDATA[
+
+      MESSAGE sip:+1[field0]@rcse-dls-capacity.mavenir.lab SIP/2.0
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      From: <sip:+1[field2]@rcse-dls-capacity.mavenir.lab>;tag=[pid][call_number]
+      To: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab;user=phone>
+      Call-ID: 3005///[call_id]
+      User-Agent: CPM-client/OMA1.0 MSP/1.0
+      CSeq: [cseq] MESSAGE
+      Route: <sip:rcse-dls-capacity.mavenir.lab:5060;lr;orig>
+      Route: <sip:[local_ip]:[field3];lr>
+      Contact: <sip:[local_ip]:[local_port]>;+sip.instance="<urn:gsma:imei:[$8Digit]-[$2Digit]0000-0>";+g.3gpp.icsi-ref="urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg"
+      Supported: join,replaces
+      Allow: INVITE,UPDATE,ACK,CANCEL,BYE,NOTIFY,MESSAGE
+      P-Visited-Network-ID: rcse-dls-capacity.mavenir.lab
+      Max-Forwards: 68
+      P-Access-Network-Info: 3GPP-E-UTRAN-FDD
+      Accept-Contact: *;+g.3gpp.icsi-ref="urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg"
+      P-Asserted-Identity: "+1[field2]" <sip:+1[field2]@rcse-dls-capacity.mavenir.lab>
+      P-Charging-Function-Addresses: ecf="aaa://mavenir.lab";ecf="aaa://mavenir.lab"
+      P-Served-User: <sip:+1[field2]@rcse-dls-capacity.mavenir.lab>;sescase=orig;regstate=reg
+      Content-Type: message/cpim
+      Content-Length:[len]
+
+        From: sip:+1[field2]@rcse-dls-capacity.mavenir.lab
+        NS: imdn <urn:ietf:params:imdn>
+        imdn.Message-ID:Vinay
+        DateTime: 2015-11-30T17:50:35+05:30
+        To: sip:+1[field0]@rcse-dls-capacity.mavenir.lab
+        Original-To: sip:+1[field0]@rcse-dls-capacity.mavenir.lab
+        Content-Type: message/imdn+xml
+        Content-Disposition: notification
+        Content-Length: 441
+
+<?xml version="1.0" encoding="UTF-8"?>
+      <imdn xmlns="urn:ietf:params:xml:ns:imdn">
+      <message-id>Vinay</message-id>
+      <datetime>2015-11-30T17:50:35+05:30</datetime>
+      <recipient-uri>sip:+1[field0]@rcse-dls-capacity.mavenir.lab</recipient-uri>
+      <original-recipient-uri>sip:+1[field0]@rcse-dls-capacity.mavenir.lab</original-recipient-uri>
+      <display-notification>
+         <status>
+            <displayed/>
+         </status>
+      </display-notification>
+      </imdn>
+
+    ]]>
+  </send>
+
+ <recv response="403" optional="true" next="203">
+ </recv>
+
+
+  <recv response="200" rrs="true" next="203">
+  </recv-->
+
+<send>
+   <![CDATA[
+  200 OK 
+   [$FullNum]
+    ]]>
+</send>
+
+<label id="203">
+</scenario>
+

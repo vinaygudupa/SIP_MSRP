@@ -1,0 +1,10 @@
+LOCAL_HOST = fcff:1:256:172:24:1:0:73
+UDP_PORT_MO = 4460
+UDP_PORT_MT = 4461
+RMS_HOST = fcff:1:256:172:24:3:0:190
+task_timeout = 60
+fqdn = rcse-dls-capacity.mavenir.lab
+app_serv_port_start = [10400,4000,7000,10000,10600,2400,2600,10800,4400,4600,7200,7400]
+app_serv_port_range = 200
+Large_Data_Size = 1258291
+CHUNK_SIZE = 1400000

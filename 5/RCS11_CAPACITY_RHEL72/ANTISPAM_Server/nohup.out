@@ -1,0 +1,261 @@
+[?1049h[1;24r(B[m[4l[?7h[H[2J[5;19HRx: POST_authorize[5;58H0[6;19HTx: POST_authorize_resp[6;58H0[7;19HRx: POST_invite_mt[7;58H0[8;19HTx: POST_invite_mt_resp[8;58H0[9;19HRx: POST_invite_mo[9;58H0[10;19HTx: POST_invite_mo_resp[10;58H0[11;19HRx: POST_Msrp_mo[11;58H0[12;19HTx: POST_Mrp_resp_mo[12;58H0[13;19HRx: POST_Msrp_mt[13;58H0[14;19HTx: POST_Mrp_resp_mt[14;58H0[15;19HRx: POST_msg_mo[15;58H0[16;19HTx: POST_msg_mo_resp[16;58H0[17;19HRx: POST_msg_mt[17;58H0[18;19HTx: POST_msg_mt_resp[18;58H0
+[5;58H1
+1[19d[5;58H2
+2[19d[?1049h[1;24r(B[m[4l[?7h[H[2J[5;19HRx: POST_authorize[5;58H0[6;19HTx: POST_authorize_resp[6;58H0[7;19HRx: POST_invite_mt[7;58H0[8;19HTx: POST_invite_mt_resp[8;58H0[9;19HRx: POST_invite_mo[9;58H0[10;19HTx: POST_invite_mo_resp[10;58H0[11;19HRx: POST_Msrp_mo[11;58H0[12;19HTx: POST_Mrp_resp_mo[12;58H0[13;19HRx: POST_Msrp_mt[13;58H0[14;19HTx: POST_Mrp_resp_mt[14;58H0[15;19HRx: POST_msg_mo[15;58H0[16;19HTx: POST_msg_mo_resp[16;58H0[17;19HRx: POST_msg_mt[17;58H0[18;19HTx: POST_msg_mt_resp[18;58H0
+[?1049h[1;24r(B[m[4l[?7h[H[2J[5;19HRx: POST_authorize[5;58H0[6;19HTx: POST_authorize_resp[6;58H0[7;19HRx: POST_invite_mt[7;58H0[8;19HTx: POST_invite_mt_resp[8;58H0[9;19HRx: POST_invite_mo[9;58H0[10;19HTx: POST_invite_mo_resp[10;58H0[11;19HRx: POST_Msrp_mo[11;58H0[12;19HTx: POST_Mrp_resp_mo[12;58H0[13;19HRx: POST_Msrp_mt[13;58H0[14;19HTx: POST_Mrp_resp_mt[14;58H0[15;19HRx: POST_msg_mo[15;58H0[16;19HTx: POST_msg_mo_resp[16;58H0[17;19HRx: POST_msg_mt[17;58H0[18;19HTx: POST_msg_mt_resp[18;58H0
+[5;58H1
+1[19d[5;58H2
+2[19d[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  2
+		  Tx: POST_authorize_resp             2
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  0
+		  Tx: POST_authorize_resp             0
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  0
+		  Tx: POST_authorize_resp             0
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  0
+		  Tx: POST_authorize_resp             0
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[H[2J[5;19HRx: POST_authorize[5;58H0[6;19HTx: POST_authorize_resp[6;58H0[7;19HRx: POST_invite_mt[7;58H0[8;19HTx: POST_invite_mt_resp[8;58H0[9;19HRx: POST_invite_mo[9;58H0[10;19HTx: POST_invite_mo_resp[10;58H0[11;19HRx: POST_Msrp_mo[11;58H0[12;19HTx: POST_Mrp_resp_mo[12;58H0[13;19HRx: POST_Msrp_mt[13;58H0[14;19HTx: POST_Mrp_resp_mt[14;58H0[15;19HRx: POST_msg_mo[15;58H0[16;19HTx: POST_msg_mo_resp[16;58H0[17;19HRx: POST_msg_mt[17;58H0[18;19HTx: POST_msg_mt_resp[18;58H0
+[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  0
+		  Tx: POST_authorize_resp             0
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  0
+		  Tx: POST_authorize_resp             0
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  0
+		  Tx: POST_authorize_resp             0
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[H[2J[5;19HRx: POST_authorize[5;58H0[6;19HTx: POST_authorize_resp[6;58H0[7;19HRx: POST_invite_mt[7;58H0[8;19HTx: POST_invite_mt_resp[8;58H0[9;19HRx: POST_invite_mo[9;58H0[10;19HTx: POST_invite_mo_resp[10;58H0[11;19HRx: POST_Msrp_mo[11;58H0[12;19HTx: POST_Mrp_resp_mo[12;58H0[13;19HRx: POST_Msrp_mt[13;58H0[14;19HTx: POST_Mrp_resp_mt[14;58H0[15;19HRx: POST_msg_mo[15;58H0[16;19HTx: POST_msg_mo_resp[16;58H0[17;19HRx: POST_msg_mt[17;58H0[18;19HTx: POST_msg_mt_resp[18;58H0
+[24;1H[?1049l[?1l>root      5360  5291  0 01:13 pts/0    00:00:00 /root/Vinay/RMS94_CAPACITY/ANTISPAM_Server/RMS_ANTI_SPAM -address 172.24.1.72:8060
+[?1049h[1;24r(B[m[4l[?7h[H[2J[5;19HRx: POST_authorize[5;58H0[6;19HTx: POST_authorize_resp[6;58H0[7;19HRx: POST_invite_mt[7;58H0[8;19HTx: POST_invite_mt_resp[8;58H0[9;19HRx: POST_invite_mo[9;58H0[10;19HTx: POST_invite_mo_resp[10;58H0[11;19HRx: POST_Msrp_mo[11;58H0[12;19HTx: POST_Mrp_resp_mo[12;58H0[13;19HRx: POST_Msrp_mt[13;58H0[14;19HTx: POST_Mrp_resp_mt[14;58H0[15;19HRx: POST_msg_mo[15;58H0[16;19HTx: POST_msg_mo_resp[16;58H0[17;19HRx: POST_msg_mt[17;58H0[18;19HTx: POST_msg_mt_resp[18;58H0
+[?1049h[1;24r(B[m[4l[?7h[H[2J[5;19HRx: POST_authorize[5;58H0[6;19HTx: POST_authorize_resp[6;58H0[7;19HRx: POST_invite_mt[7;58H0[8;19HTx: POST_invite_mt_resp[8;58H0[9;19HRx: POST_invite_mo[9;58H0[10;19HTx: POST_invite_mo_resp[10;58H0[11;19HRx: POST_Msrp_mo[11;58H0[12;19HTx: POST_Mrp_resp_mo[12;58H0[13;19HRx: POST_Msrp_mt[13;58H0[14;19HTx: POST_Mrp_resp_mt[14;58H0[15;19HRx: POST_msg_mo[15;58H0[16;19HTx: POST_msg_mo_resp[16;58H0[17;19HRx: POST_msg_mt[17;58H0[18;19HTx: POST_msg_mt_resp[18;58H0
+[5;58H1
+1[19d[5;58H2
+2[19d[5;58H4
+4[19d[?1049h[1;24r(B[m[4l[?7h[H[2J[5;19HRx: POST_authorize[5;58H0[6;19HTx: POST_authorize_resp[6;58H0[7;19HRx: POST_invite_mt[7;58H0[8;19HTx: POST_invite_mt_resp[8;58H0[9;19HRx: POST_invite_mo[9;58H0[10;19HTx: POST_invite_mo_resp[10;58H0[11;19HRx: POST_Msrp_mo[11;58H0[12;19HTx: POST_Mrp_resp_mo[12;58H0[13;19HRx: POST_Msrp_mt[13;58H0[14;19HTx: POST_Mrp_resp_mt[14;58H0[15;19HRx: POST_msg_mo[15;58H0[16;19HTx: POST_msg_mo_resp[16;58H0[17;19HRx: POST_msg_mt[17;58H0[18;19HTx: POST_msg_mt_resp[18;58H0
+[5;58H2
+2[19d[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  2
+		  Tx: POST_authorize_resp             2
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[H[2J[5;19HRx: POST_authorize[5;58H0[6;19HTx: POST_authorize_resp[6;58H0[7;19HRx: POST_invite_mt[7;58H0[8;19HTx: POST_invite_mt_resp[8;58H0[9;19HRx: POST_invite_mo[9;58H0[10;19HTx: POST_invite_mo_resp[10;58H0[11;19HRx: POST_Msrp_mo[11;58H0[12;19HTx: POST_Mrp_resp_mo[12;58H0[13;19HRx: POST_Msrp_mt[13;58H0[14;19HTx: POST_Mrp_resp_mt[14;58H0[15;19HRx: POST_msg_mo[15;58H0[16;19HTx: POST_msg_mo_resp[16;58H0[17;19HRx: POST_msg_mt[17;58H0[18;19HTx: POST_msg_mt_resp[18;58H0
+[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  0
+		  Tx: POST_authorize_resp             0
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  0
+		  Tx: POST_authorize_resp             0
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  0
+		  Tx: POST_authorize_resp             0
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  0
+		  Tx: POST_authorize_resp             0
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  0
+		  Tx: POST_authorize_resp             0
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  0
+		  Tx: POST_authorize_resp             0
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[24;1H[?1049l[?1l>
+                  Rx: POST_authorize                  0
+		  Tx: POST_authorize_resp             0
+		  Rx: POST_invite_mt                     0
+		  Tx: POST_invite_mt_resp                0
+		  Rx: POST_invite_mo                     0
+		  Tx: POST_invite_mo_resp                0
+		  Rx: POST_Msrp_mo                       0
+		  Tx: POST_Mrp_resp_mo                   0
+		  Rx: POST_Msrp_mt                       0
+		  Tx: POST_Mrp_resp_mt                   0
+		  Rx: POST_msg_mo                        0
+		  Tx: POST_msg_mo_resp                   0
+		  Rx: POST_msg_mt                        0
+		  Tx: POST_msg_mt_resp                   0
+
+[?1049h[1;24r(B[m[4l[?7h[24;1H[?1049l[?1l>[?1049h[1;24r(B[m[4l[?7h[H[2J[H[2J[5;19HRx: POST_authorize[5;58H0[6;19HTx: POST_authorize_resp[6;58H0[7;19HRx: POST_invite_mt[7;58H0[8;19HTx: POST_invite_mt_resp[8;58H0[9;19HRx: POST_invite_mo[9;58H0[10;19HTx: POST_invite_mo_resp[10;58H0[11;19HRx: POST_Msrp_mo[11;58H0[12;19HTx: POST_Mrp_resp_mo[12;58H0[13;19HRx: POST_Msrp_mt[13;58H0[14;19HTx: POST_Mrp_resp_mt[14;58H0[15;19HRx: POST_msg_mo[15;58H0[16;19HTx: POST_msg_mo_resp[16;58H0[17;19HRx: POST_msg_mt[17;58H0[18;19HTx: POST_msg_mt_resp[18;58H0
+[5;58H2
+2[19d

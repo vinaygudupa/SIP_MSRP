@@ -1,0 +1,6 @@
+LOCAL_HOST = fcff:1:256:172:24:1:0:72
+LOCAL_PORT = 8082
+HEALTH_PING_STRING = /vivoMailMgr/MstoreHealthTest
+ARCHIVE_STRING = /rmsclient/nms/v1/rms/tel:+{number}/objects/
+VM_STRING = /nms/vmSyncNotification
+FAX_STRING = /host/nms/v1/ums/{number}/objects/

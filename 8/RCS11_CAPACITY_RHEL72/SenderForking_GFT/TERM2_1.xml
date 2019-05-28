@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE scenario SYSTEM "sipp.dtd">
+
+
+<scenario name="Basic Sipstone UAS">
+
+  <recv request="INVITE" rrs="true">
+  <action>
+  <ereg regexp=".*" header="CSeq: " search_in="hdr" assign_to="1" />
+  <ereg regexp=".*" header="Via: " search_in="hdr" assign_to="2" />
+  <ereg regexp=".*" header="To: " search_in="hdr" assign_to="4" />
+  <ereg regexp=".*filetransfer" search_in="hdr" header="Accept-Contact" assign_to="24" />
+  <ereg regexp="a=path:.*;tcp" search_in="msg" assign_to="99"/>
+  <ereg regexp="a=file-selector:.*type:image/jpeg size:2625197" search_in="msg" assign_to="91"/>
+  <ereg regexp="a=file-transfer-id:.*VinayFT" search_in="msg" assign_to="92"/>
+  <ereg regexp="sip:\+1(.*?)@" header="To: " search_in="hdr" assign_to="8,9" />
+  <ereg regexp="sip:\+1(.*?)@" header="P-Asserted-Identity: " search_in="hdr" assign_to="11,13" />
+  <ereg regexp="<.*>" header="Accept-Contact: " search_in="hdr" assign_to="sipInstance" />
+</action>
+  </recv>
+
+
+  <send>
+    <![CDATA[
+      SIP/2.0 100 Trying
+      [last_Via:]
+      [last_From:]
+      [last_To:]
+      [last_Call-ID:]
+      [last_CSeq:]
+      Content-Length: 0
+
+    ]]>
+  </send>
+
+ <send test="24" next="80">
+    <![CDATA[
+
+      SIP/2.0 180 Ringing
+      Via:[$2]
+      [last_From:]
+      To: [$4];tag=[call_number]
+      [last_Call-ID:]
+      CSeq: [$1]
+      Contact: <sip:[local_ip]:[local_port]>
+      Content-Length: 0
+      Record-Route: <sip:[local_ip]:[local_port];lr>
+
+    ]]>
+ </send>
+ <send>
+    <![CDATA[
+
+      SIP/2.0 200 OK
+      Via: [$2]
+      [last_From:]
+      To: [$4];tag=[call_number]
+      [last_Call-ID:]
+      CSeq: [$1]
+      Contact: <sip:[local_ip]:[local_port]>;+sip.instance="[$sipInstance]";+g.3gpp.icsi-ref="urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.session"
+      Record-Route: <sip:[local_ip]:[local_port];lr>
+      Content-Type: application/sdp
+      Content-Length:[len]
+
+      v=0
+      o=- 1234567890 1234567890 IN IP4 [local_ip]
+      s=Capacity Testing
+      c=IN IP4 [local_ip]
+      m=MESSAGE 3200 TCP/MSRP *
+      a=path:msrp://[local_ip]:3200/[call_number];tcp
+      a=sendrecv
+      a=setup:active
+      a=max-size:10320000
+      a=accept-types:message/cpim
+      a=accept-wrapped-types:*
+
+    ]]>
+  </send>
+
+  <recv request="ACK">
+  </recv>
+
+
+
+<label id ="75"/>
+
+
+<recv request="BYE" rrs="true">
+</recv>
+
+  <send next="85">
+    <![CDATA[
+
+      SIP/2.0 200 OK
+      [last_Via:]
+      [last_From:]
+      [last_To:]
+      [last_Call-ID:]
+      [last_Cseq:]
+      Content-Length:0
+
+    ]]>
+  </send>
+
+<label id = "80" />
+
+ <send> 
+    <![CDATA[
+
+      SIP/2.0 200 OK
+      [last_Via:]
+      [last_From:]
+      To: [$4];tag=[call_number]
+      [last_Call-ID:]
+      [last_CSeq:]
+      Contact: <sip:[local_ip]:[local_port]>;+sip.instance="[$sipInstance]";+g.3gpp.icsi-ref="urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.filetransfer"
+      Record-Route: <sip:[local_ip]:[local_port];lr>
+      Content-Type: application/sdp
+      Content-Length:[len]
+
+      v=0
+      o=- 1234567890 1234567890 IN IP4 [local_ip]
+      s=Capacity Testing
+      c=IN IP4 [local_ip]
+      m=MESSAGE 3300 TCP/MSRP *
+      a=path:msrp://[local_ip]:3300/[call_number];tcp
+      a=sendrecv
+      a=setup:active
+      a=max-size:10320000
+      a=accept-types:image/jpeg
+      [$91]
+      [$92]
+
+    ]]>
+  </send>
+
+
+
+<recv request="ACK">
+</recv>
+
+  <nop>
+     <action>
+        <setdest host="[local_ip]" port="5557" protocol="UDP" />
+     </action>
+  </nop>
+
+<send>
+    <![CDATA[
+      SIP/2.0 200 OK
+      a=From-Path:msrp://[local_ip]:3300/[call_number];tcp
+      [$99]
+      a=FROMNUM:+1[$9]FROMNUM
+      a=TONUM:+1[$13]TONUM
+    ]]>
+</send>
+
+  <nop>
+     <action>
+        <setdest host="[remote_ip]" port="5060" protocol="UDP" />
+     </action>
+  </nop>
+
+
+<recv request="BYE">
+</recv>
+
+<send next="75">
+    <![CDATA[
+
+      SIP/2.0 200 OK
+      [last_Via:]
+      [last_From:]
+      [last_To:]
+      [last_Call-ID:]
+      [last_CSeq:]
+      Content-Length: 0
+
+    ]]>
+  </send>
+
+<label id="10"/>
+<send next="85">
+    <![CDATA[
+
+      SIP/2.0 200 OK
+      [$8][$11]
+    ]]>
+  </send>
+
+<label id = "85" />
+
+<pause milliseconds="10000"/>
+</scenario>
+

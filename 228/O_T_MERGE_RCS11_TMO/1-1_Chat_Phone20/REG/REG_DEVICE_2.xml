@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE scenario SYSTEM "sipp.dtd">
+
+<scenario name="Basic Sipstone UAC">
+  <send retrans="500">
+    <![CDATA[
+
+      REGISTER sip:rcse-dls-capacity.mavenir.lab SIP/2.0
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      From: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>;tag=[call_number]
+      To: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>
+      Call-ID: [call_id]
+      CSeq: 1 REGISTER
+      Contact: sip:[local_ip]:[field1]
+      Max-Forwards: 70
+      Expires: 360000
+      P-Access-Network-Info: 3GPP-E-UTRAN-FDD;utran-cell-id-3gpp=12345678901234567
+      Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, NOTIFY, SUBSCRIBE
+      Content-Type: multipart/mixed;boundary="boundary2"
+      Content-Length: [len]
+
+      --boundary2
+      Content-Type: message/sip
+
+      REGISTER sip:scscf.mavenir1.com SIP/2.0
+      Via: SIP/2.0/UDP icscf.mavenir1.com:5060;branch=z9hG4bKmavodi-3-51-2-5-e0ff00ff-5ef01bc14c2ad439,SIP/2.0/UDP 172.24.3.35:5061;received=172.24.3.35;branch=z9hG4bK-11812-2-2
+      From: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>;tag=2
+      To: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>
+      Call-ID: 2@172.24.3.35
+      CSeq: 2 REGISTER
+      Contact: <sip:+1[field0]@[local_ip]:[field3];transport=UDP>;expires=360000;+g.3gpp.smsip;audio;+sip.instance="<urn:uuid:22222222-2222-2222-2222-22[field0]>";+g.access.3GPP-E-UTRAN-FDD;+g.3gpp.icsi-ref="urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.session,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.filetransfer,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.largemsg";q=1.0
+      iAuthorization: Digest username="9999990000@mavenir1.com",realm="mavenir1.com",uri="sip:172.24.3.146:5060",nonce="MTIzNDU2Nzg5MHF3ZXJ0eXVpb3Bhc2RmZ2hqAHYAAAA=",response="25ed190073d284496a4e12f3ee634359",algorithm=AKAv1-MD5,integrity-protected="yes"
+      Max-Forwards: 69
+      Expires:36000 
+      Request-Disposition: self-fork
+      P-Access-Network-Info: 3GPP-E-UTRAN-FDD;utran-cell-id-3gpp=12345678901234567
+      P-Visited-Network-ID: mavenir1.com
+      User-Agent: SIPP
+      Allow: INVITE,ACK,CANCEL,OPTIONS,BYE,REFER,NOTIFY
+      Content-Length: 0
+
+
+      --boundary2
+      Content-Type: message/sip
+
+      SIP/2.0 200 OK
+      Via: SIP/2.0/UDP icscf.mavenir1.com:5060;branch=z9hG4bKmavodi-3-51-2-5-e0ff00ff-5ef01bc14c2ad439,SIP/2.0/UDP 172.24.3.35:5061;received=172.24.3.35;branch=z9hG4bK-11812-2-2
+      From: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>;tag=2
+      To: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>;tag=MavenirUA_00005086F1BE-6b1a-43806940-22-4ecc5405-775b8
+      Call-ID: 2@172.24.3.35
+      CSeq: 2 REGISTER
+      Contact: <sip:+1[field0]@[local_ip]:[field3];transport=UDP>;+sip.instance="<urn:uuid:22222222-2222-2222-2222-22[field0]>";q=1.0;+g.3gpp.icsi-ref="urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.session,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.filetransfer,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.largemsg";audio;+g.access.3GPP-E-UTRAN-FDD;expires=7200
+      P-Associated-URI: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>
+      Service-Route: <sip:mavodi-3-4a-3fffffff-1-ffffffff@scscf.mavenir1.com:5070;lr>
+      P-Charging-Function-Addresses: ccf=pcf.mavenir1.com
+      Content-Length: 0
+
+
+     --boundary2--
+
+    ]]>
+  </send>
+
+  <recv response="200" rrs="true">
+  </recv>
+
+</scenario>
+

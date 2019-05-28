@@ -1,0 +1,230 @@
+<?xml version=1.0 encoding=ISO-8859-1 ?>
+<!DOCTYPE scenario SYSTEM sipp.dtd>
+
+<scenario name=Client with regexp scenario>
+
+  <recv request="SUBSCRIBE" rrs="true">
+     <action>
+        <ereg regexp="sip:.*:5060" search_in="hdr" header="Contact: " check_it="true" assign_to="62"/>
+        <ereg regexp=".*" header="To: " search_in="hdr" assign_to="4" />
+        <ereg regexp=".*" header="From: " search_in="hdr" assign_to="5" />
+        <ereg regexp="sip:\+1([0-9]{2})([0-9]{8})@" header="From: " search_in="hdr" assign_to="Number,2Digit,8Digit" />
+
+     </action>
+  </recv>
+
+  <send>
+    <![CDATA[
+
+      SIP/2.0 200 OK
+      [last_Via:]
+      From: [$5]
+      To:[$4];tag=SIPP[call_number]
+      [last_Call-ID:]
+      [last_Cseq:]
+      Contact: <sip:[local_ip]:[local_port]>
+      Expires: 3600
+      Content-Length:0
+
+    ]]>
+  </send>
+ 
+<pause milliseconds="100"/>
+
+
+  <send>
+    <![CDATA[
+
+      NOTIFY [$62] SIP/2.0
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      From: [$4];tag=SIPP[call_number]
+      To: [$5]
+      [last_Call-ID:]
+      CSeq: 3 NOTIFY
+      Max-Forwards: 70
+      Contact: <sip:[local_ip]:[local_port]>
+      Event: conference
+      Subscription-State: active
+      Content-Type: application/conference-info+xml
+      Content-Length: [len]
+
+<?xml version="1.0" encoding="UTF-8"?>
+<conference-info xmlns="urn:ietf:params:xml:ns:conference-info" entity="[$62]" state="full" version="1">
+	<conference-description>
+	<maximum-user-count>10</maximum-user-count>
+		<conf-uris>
+			<entry>
+				<uri>[$62]</uri>
+				<purpose>participation</purpose>
+			</entry>
+		</conf-uris>
+	</conference-description>
+		<conference-state>
+			<user-count>7</user-count>
+		</conference-state>
+		<users>
+                        <user entity="sip:+122[$8Digit]@rcse-dls-capacity.mavenir.lab">
+                                <display-text>+122[$8Digit]</display-text>
+                                <endpoint entity="sip:+122[$8Digit]@[local_ip]:2345">
+                                        <status>connected</status>
+                                </endpoint>
+                        </user>
+                        <user entity="sip:+144[$8Digit]@rcse-dls-capacity.mavenir.lab" yourown="true">
+                                <display-text>+144[$8Digit]</display-text>
+                                <endpoint entity="sip:+144[$8Digit]@[local_ip]:2346">
+                                        <status>connected</status>
+                                </endpoint>
+                        </user>
+                        <user entity="sip:+145[$8Digit]@rcse-dls-capacity.mavenir.lab">
+                                <display-text>+145[$8Digit]</display-text>
+                                <endpoint entity="sip:+145[$8Digit]@[local_ip]:2347">
+                                        <status>connected</status>
+                                </endpoint>
+                        </user>
+                         <user entity="sip:+146[$8Digit]@rcse-dls-capacity.mavenir.lab">
+                                <display-text>+146[$8Digit]</display-text>
+                                <endpoint entity="sip:+146[$8Digit]@[local_ip]:2348">
+                                        <status>connected</status>
+                                </endpoint>
+                        </user>
+                         <user entity="sip:+147[$8Digit]@rcse-dls-capacity.mavenir.lab">
+                                <display-text>+147[$8Digit]</display-text>
+                                <endpoint entity="sip:+147[$8Digit]@[local_ip]:2348">
+                                        <status>connected</status>
+                                </endpoint>
+                        </user>
+                         <user entity="sip:+148[$8Digit]@rcse-dls-capacity.mavenir.lab">
+                                <display-text>+148[$8Digit]</display-text>
+                                <endpoint entity="sip:+148[$8Digit]@[local_ip]:2348">
+                                        <status>connected</status>
+                                </endpoint>
+                        </user>
+                         <user entity="sip:+149[$8Digit]@rcse-dls-capacity.mavenir.lab">
+                                <display-text>+149[$8Digit]</display-text>
+                                <endpoint entity="sip:+149[$8Digit]@[local_ip]:2348">
+                                        <status>connected</status>
+                                </endpoint>
+                        </user>
+		</users>
+</conference-info>
+
+    ]]>
+  </send>
+
+  <recv response="200" crlf="true">
+  </recv>
+
+
+ <pause milliseconds="280000"/>
+
+  <send>
+    <![CDATA[
+
+      NOTIFY [$62] SIP/2.0
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      From: [$4];tag=SIPP[call_number]
+      To: [$5]
+      [last_Call-ID:]
+      CSeq: 4 NOTIFY
+      Max-Forwards: 70
+      Contact: <sip:[local_ip]:[local_port]>
+      Event: conference
+      Subscription-State: terminated;reason=noresource
+      Content-Type: application/conference-info+xml
+      Content-Length: [len]
+
+<?xml version="1.0" encoding="UTF-8"?>
+<conference-info xmlns="urn:ietf:params:xml:ns:conference-info" entity="[$62]" state="full" version="1">
+        <conference-description>
+        <maximum-user-count>10</maximum-user-count>
+                <conf-uris>
+                        <entry>
+                                <uri>[$62]</uri>
+                                <purpose>participation</purpose>
+                        </entry>
+                </conf-uris>
+        </conference-description>
+                <conference-state>
+                        <user-count>0</user-count>
+                </conference-state>
+                <users>
+                        <user entity="sip:+122[$8Digit]@rcse-dls-capacity.mavenir.lab">
+                                <display-text>+122[$8Digit]</display-text>
+                                <endpoint entity="sip:+122[$8Digit]@[local_ip]:2345">
+                                        <status>disconnected</status>
+                                        <disconnection-method>booted</disconnection-method>
+                                </endpoint>
+                        </user>
+                        <user entity="sip:+144[$8Digit]@rcse-dls-capacity.mavenir.lab" yourown="true">
+                                <display-text>+144[$8Digit]</display-text>
+                                <endpoint entity="sip:+144[$8Digit]@[local_ip]:2346">
+                                        <status>disconnected</status>
+                                        <disconnection-method>booted</disconnection-method>
+                                </endpoint>
+                        </user>
+                        <user entity="sip:+145[$8Digit]@rcse-dls-capacity.mavenir.lab">
+                                <display-text>+145[$8Digit]</display-text>
+                                <endpoint entity="sip:+145[$8Digit]@[local_ip]:2347">
+                                        <status>disconnected</status>
+                                        <disconnection-method>booted</disconnection-method>
+                                </endpoint>
+                        </user>
+                         <user entity="sip:+146[$8Digit]@rcse-dls-capacity.mavenir.lab">
+                                <display-text>+146[$8Digit]</display-text>
+                                <endpoint entity="sip:+146[$8Digit]@[local_ip]:2348">
+                                        <status>disconnected</status>
+                                        <disconnection-method>booted</disconnection-method>
+                                </endpoint>
+                        </user>
+                         <user entity="sip:+147[$8Digit]@rcse-dls-capacity.mavenir.lab">
+                                <display-text>+147[$8Digit]</display-text>
+                                <endpoint entity="sip:+147[$8Digit]@[local_ip]:2348">
+                                        <status>disconnected</status>
+                                        <disconnection-method>booted</disconnection-method>
+                                </endpoint>
+                        </user>
+                         <user entity="sip:+148[$8Digit]@rcse-dls-capacity.mavenir.lab">
+                                <display-text>+148[$8Digit]</display-text>
+                                <endpoint entity="sip:+148[$8Digit]@[local_ip]:2348">
+                                        <status>disconnected</status>
+                                        <disconnection-method>booted</disconnection-method>
+                                </endpoint>
+                        </user>
+                         <user entity="sip:+149[$8Digit]@rcse-dls-capacity.mavenir.lab">
+                                <display-text>+149[$8Digit]</display-text>
+                                <endpoint entity="sip:+149[$8Digit]@[local_ip]:2348">
+                                        <status>disconnected</status>
+                                        <disconnection-method>booted</disconnection-method>
+                                </endpoint>
+                        </user>
+                </users>
+</conference-info>
+
+    ]]>
+  </send>
+
+  <recv response="408" optional="true" next="4">
+  </recv>
+
+  <recv response="481" optional="true" next="4">
+  </recv>
+
+
+  <recv response="200" crlf="true" next="4">
+  </recv>
+
+<label id="End"/>
+
+<send>
+   <![CDATA[
+  200 OK 
+   [$Number][$2Digit]
+    ]]>
+</send>
+
+<label id="4"/>
+
+
+
+</scenario>
+

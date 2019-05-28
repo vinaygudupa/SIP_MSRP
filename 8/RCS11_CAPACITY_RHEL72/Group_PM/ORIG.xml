@@ -1,0 +1,93 @@
+<?xml version=1.0 encoding=ISO-8859-1 ?>
+<!DOCTYPE scenario SYSTEM sipp.dtd>
+
+<scenario name=Client with regexp scenario>
+
+<nop>
+  <action>
+    <assignstr assign_to="Number" value="[field0]" />
+    <ereg regexp="([0-9]{8})([0-9]{2})" search_in="var" assign_to="FullNum,8Digit,2Digit" variable="Number" />
+  </action>
+</nop>
+
+  <send retrans="500">
+    <![CDATA[
+
+      MESSAGE sip:adhoc@rcse-dls-capacity.mavenir.lab SIP/2.0
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      From: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>;tag=[pid][call_number]
+      To: <sip:adhoc@rcse-dls-capacity.mavenir.lab;user=phone>
+      Call-ID: [clock_tick][branch]///[call_id]
+      User-Agent: CPM-client/OMA1.0 MSP/1.0
+      CSeq: [cseq] MESSAGE
+      Contact: <sip:[local_ip]:[local_port]>;+sip.instance="<urn:gsma:imei:[$8Digit]-[$2Digit]0000-0>";+g.3gpp.icsi-ref="urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg"
+      Route: <sip:rcse-dls-capacity.mavenir.lab:5060;orig;lr>
+      Route: <sip:[local_ip]:[field2];lr>
+      Supported: join,replaces
+      Allow: INVITE,UPDATE,ACK,CANCEL,BYE,NOTIFY,MESSAGE
+      P-Visited-Network-ID: rcse-dls-capacity.mavenir.lab
+      P-Access-Network-Info: 3GPP-E-UTRAN-FDD
+      Max-Forwards: 68
+      Subject: 1234
+      Contribution-ID: GROUP_PM_Contribution-[call_id]
+      Conversation-ID: GROUP_PM_Conversation-IP[local_ip]PORT[field12]END
+      Accept-Contact: *;+g.3gpp.icsi-ref="urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg"
+      P-Asserted-Identity: "+1[field0]" <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>
+      P-Charging-Function-Addresses: ccf="aaa://mavenir.lab";ccf="aaa://mavenir.lab"
+      P-Served-User: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>;sescase=orig;regstate=reg
+      Content-Type: multipart/mixed;boundary=boundary1
+      Content-Length:[len]
+
+      --boundary1
+        Content-Type: message/cpim
+        Content-Length: 512
+
+        From: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>
+        To: <sip:adhoc@rcse-dls-capacity.mavenir.lab>
+        DateTime: 2015-11-30T17:51:21+05:30
+        Content-type: text/plain;
+        NS: imdn <urn:ietf:params:imdn>
+        imdn.Message-ID:[field0]Vinay
+        imdn.Disposition-Notification: positive-delivery,display
+        Content-length: 200
+
+        PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE11
+	--boundary1
+	Content-Type: application/resource-lists+xml
+	Content-Disposition: recipient-list
+	Content-Length: 1097
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<resource-lists xmlns="urn:ietf:params:xml:ns:resource-lists" xmlns:cp="urn:ietf:params:xml:ns:copycontrol">
+	<list>
+	<entry uri="sip:+1[field1]@rcse-dls-capacity.mavenir.lab" cp:copyControl="to"/>
+	<entry uri="sip:+1[field2]@rcse-dls-capacity.mavenir.lab" cp:copyControl="to"/>
+        <entry uri="sip:+1[field3]@rcse-dls-capacity.mavenir.lab" cp:copyControl="to"/>
+        <entry uri="sip:+1[field4]@rcse-dls-capacity.mavenir.lab" cp:copyControl="to"/>
+        <entry uri="sip:+1[field5]@rcse-dls-capacity.mavenir.lab" cp:copyControl="to"/>
+        <entry uri="sip:+1[field6]@rcse-dls-capacity.mavenir.lab" cp:copyControl="to"/>
+        <entry uri="sip:+1[field7]@rcse-dls-capacity.mavenir.lab" cp:copyControl="to"/>
+        <entry uri="sip:+1[field8]@rcse-dls-capacity.mavenir.lab" cp:copyControl="to"/>
+        <entry uri="sip:+1[field9]@rcse-dls-capacity.mavenir.lab" cp:copyControl="to"/>
+        <entry uri="sip:+1[field10]@rcse-dls-capacity.mavenir.lab" cp:copyControl="to"/>
+        <entry uri="sip:+1[field11]@rcse-dls-capacity.mavenir.lab" cp:copyControl="to"/>
+	</list>
+	</resource-lists>
+
+      --boundary1--
+    ]]>
+  </send>
+
+  <recv response="200" rrs="true" next="End">
+  </recv>
+
+<send>
+   <![CDATA[
+  200 OK 
+   [$FullNum]
+    ]]>
+</send>
+
+<label id="End">
+
+</scenario>

@@ -1,0 +1,10 @@
+LOCAL_HOST = 172.24.3.228
+UDP_PORT_MO = 5660
+UDP_PORT_MT = 5562
+RMS_HOST = 172.24.0.37
+task_timeout = 20
+fqdn = rcse-dls-capacity.mavenir.lab
+app_serv_port_start = [2000,4000,7000]
+app_serv_port_range = 20
+image_file = image.png
+CHUNK_SIZE = 1024000

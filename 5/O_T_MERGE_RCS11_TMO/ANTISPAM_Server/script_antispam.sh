@@ -1,0 +1,1 @@
+./RMS_ANTI_SPAM -address 172.24.1.72:8060

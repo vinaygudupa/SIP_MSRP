@@ -1,0 +1,105 @@
+LOCAL_HOST -> 172.24.1.72
+LOCAL_PORT -> 8090
+REMOTE_HOST -> 172.24.0.37
+REMOTE_PORT -> 8090
+DEFAULT_FEATURE_TAG -> ;+g.access.3GPP-E-UTRAN-FDD;+g.3gpp.icsi-ref=\"urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.session,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.filetransfer,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.largemsg\";
+HTTP_FT_FEATURE_TAG -> ;+g.access.3GPP-E-UTRAN-FDD;+g.3gpp.icsi-ref=\"urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.session,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.filetransfer,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.largemsg\";+g.3gpp.iari-ref=\"urn%3Aurn-7%3A3gpp-application.ims.iari.rcs.fthttp\";
+range_1  -> 1-1_Chat_TERM                      -- 6600000000 -- 100000 -- sip:172.24.3.16:5020                                                -- DEFAULT_FEATURE_TAG
+range_2  -> 1-1_Chat_ORIG                      -- 5500000000 -- 100000 -- sip:172.24.3.16:5018                                                -- DEFAULT_FEATURE_TAG
+range_3  -> 1-N_Chat_TERM1                     -- 6600230000 -- 10000  -- sip:172.24.3.16:5024                                                -- DEFAULT_FEATURE_TAG
+range_4  -> 1-N_Chat_TERM2                     -- 6700230000 -- 10000  -- sip:172.24.3.16:5024                                                -- DEFAULT_FEATURE_TAG
+range_5  -> 1-N_Chat_TERM3                     -- 6800230000 -- 10000  -- sip:172.24.3.16:5024                                                -- DEFAULT_FEATURE_TAG 
+range_6  -> 1-N_Chat_ORIG                      -- 5500230000 -- 10000  -- sip:172.24.3.16:5022                                                -- DEFAULT_FEATURE_TAG
+range_7  -> 1-1_FT_MSRP_MSRP_TERM              -- 6600100000 -- 10000  -- sip:172.24.3.49:5005                                                -- DEFAULT_FEATURE_TAG
+range_8  -> 1-1_FT_MSRP_MSRP_ORIG              -- 5500100000 -- 10000  -- sip:172.24.3.49:5004                                                -- DEFAULT_FEATURE_TAG
+range_9  -> 1-1_FT_HTTP_MSRP_TERM              -- 6600330000 -- 10000  -- sip:172.24.1.74:5015                                                -- DEFAULT_FEATURE_TAG
+range_10 -> 1-1_FT_HTTP_MSRP_ORIG              -- 5500330000 -- 10000  -- sip:172.24.1.74:5014                                                -- HTTP_FT_FEATURE_TAG
+range_11 -> 1-1_FT_HTTP_HTTP_TERM              -- 6600340000 -- 10000  -- sip:172.24.1.73:5220                                                -- HTTP_FT_FEATURE_TAG
+range_12 -> 1-1_FT_HTTP_HTTP_ORIG              -- 5500340000 -- 10000  -- sip:172.24.1.73:5018                                                -- HTTP_FT_FEATURE_TAG
+range_13 -> 1-N_FT_TERM1                       -- 6600250000 -- 10000  -- sip:172.24.3.49:5024                                                -- DEFAULT_FEATURE_TAG
+range_14 -> 1-N_FT_TERM2                       -- 6700250000 -- 10000  -- sip:172.24.3.49:5024                                                -- DEFAULT_FEATURE_TAG
+range_15 -> 1-N_FT_TERM3                       -- 6800250000 -- 10000  -- sip:172.24.3.49:5024                                                -- DEFAULT_FEATURE_TAG
+range_16 -> 1-N_FT_ORIG                        -- 5500250000 -- 10000  -- sip:172.24.3.49:5022                                                -- DEFAULT_FEATURE_TAG
+range_17 -> 1-1_PM_TERM                        -- 6600110000 -- 10000  -- sip:172.24.3.34:5020                                                -- DEFAULT_FEATURE_TAG
+range_18 -> 1-1_PM_ORIG                        -- 5500110000 -- 10000  -- sip:172.24.3.34:5019                                                -- DEFAULT_FEATURE_TAG
+range_19 -> 1-1_LM_TERM                        -- 6600120000 -- 10000  -- sip:172.24.3.228:5032                                               -- DEFAULT_FEATURE_TAG
+range_20 -> 1-1_LM_ORIG                        -- 5500120000 -- 10000  -- sip:172.24.3.228:5030                                               -- DEFAULT_FEATURE_TAG
+range_21 -> 1-1_PM_IMDN_TERM                   -- 5500280000 -- 10000  -- sip:172.24.1.76:7719                                                -- DEFAULT_FEATURE_TAG
+range_22 -> 1-1_PM_IMDN_ORIG                   -- 6600280000 -- 10000  -- sip:172.24.1.76:7718                                                -- DEFAULT_FEATURE_TAG
+range_23 -> Chat_SMSC_NNI_ORIG                 -- 5800000000 -- 10000  -- sip:172.24.3.16:6018                                                -- DEFAULT_FEATURE_TAG
+range_24 -> Chat_SMSC_NONRCS_ORIG              -- 9999210000 -- 10000  -- sip:172.24.3.16:5818                                                -- DEFAULT_FEATURE_TAG
+range_25 -> PM_SMSC_NNI_ORIG                   -- 5800110000 -- 10000  -- sip:172.24.1.72:5040                                                -- DEFAULT_FEATURE_TAG
+range_26 -> PM_SMSC_NONRCS_ORIG                -- 9999200000 -- 10000  -- sip:172.24.3.49:5002                                                -- DEFAULT_FEATURE_TAG
+range_27 -> FT_MMSC_NNI_ORIG                   -- 5800100000 -- 10000  -- sip:172.24.3.228:5010                                               -- DEFAULT_FEATURE_TAG
+range_28 -> FT_MMSC_NONRCS_ORIG                -- 9199210000 -- 10000  -- sip:172.24.3.228:5114                                               -- DEFAULT_FEATURE_TAG
+range_29 -> LM_MMSC_NNI_ORIG                   -- 5800120000 -- 10000  -- sip:172.24.3.227:5050                                               -- DEFAULT_FEATURE_TAG
+range_30 -> LM_MMSC_NONRCS_ORIG                -- 9199200000 -- 10000  -- sip:172.24.3.49:5003                                                -- DEFAULT_FEATURE_TAG
+range_31 -> Phone20_1_1_Chat_BARRED_TERM       -- 3311100000 -- 2000   -- sip:172.24.3.227:8000, sip:172.24.3.227:8000, sip:172.24.3.227:8000 -- DEFAULT_FEATURE_TAG
+range_32 -> Phone20_1_1_Chat_BARRED_TERM_BAR1  -- 7711100000 -- 2000   -- sip:172.24.3.227:8000                                               -- DEFAULT_FEATURE_TAG
+range_33 -> Phone20_1_1_Chat_BARRED_TERM_BAR2  -- 8811100000 -- 2000   -- sip:172.24.3.227:8000                                               -- DEFAULT_FEATURE_TAG
+range_34 -> Phone20_1_1_Chat_UNBARRED_TERM     -- 3322208000 -- 6000   -- sip:172.24.3.227:8000, sip:172.24.3.227:8000, sip:172.24.3.227:8000 -- DEFAULT_FEATURE_TAG
+range_35 -> Phone20_1_1_Chat_BARRED_ORIG       -- 3322200000 -- 2000   -- sip:172.24.3.227:8000, sip:172.24.3.227:8000, sip:172.24.3.227:8000 -- DEFAULT_FEATURE_TAG
+range_36 -> Phone20_1_1_Chat_UNBARRED_ORIG     -- 3322202000 -- 6000   -- sip:172.24.3.227:8000, sip:172.24.3.227:8000, sip:172.24.3.227:8000 -- DEFAULT_FEATURE_TAG
+range_37 -> Phone20_1_N_Chat_BARRED_TERM1      -- 3311102000 -- 1000   -- sip:172.24.1.73:8026, sip:172.24.1.73:8026, sip:172.24.1.73:8026    -- DEFAULT_FEATURE_TAG
+range_38 -> Phone20_1_N_Chat_BARRED_TERM1_BAR1 -- 7711102000 -- 1000   -- sip:172.24.1.73:8026                                                -- DEFAULT_FEATURE_TAG
+range_39 -> Phone20_1_N_Chat_BARRED_TERM1_BAR2 -- 8811102000 -- 1000   -- sip:172.24.1.73:8026                                                -- DEFAULT_FEATURE_TAG
+range_40 -> Phone20_1_N_Chat_UNBARRED_TERM1    -- 3322218000 -- 3000   -- sip:172.24.1.73:8026, sip:172.24.1.73:8026, sip:172.24.1.73:8026    -- DEFAULT_FEATURE_TAG
+range_41 -> Phone20_1_N_Chat_BARRED_TERM2      -- 3311118000 -- 1000   -- sip:172.24.1.73:8026, sip:172.24.1.73:8026, sip:172.24.1.73:8026    -- DEFAULT_FEATURE_TAG
+range_42 -> Phone20_1_N_Chat_BARRED_TERM2_BAR1 -- 7711118000 -- 1000   -- sip:172.24.1.73:8026                                                -- DEFAULT_FEATURE_TAG
+range_43 -> Phone20_1_N_Chat_BARRED_TERM2_BAR2 -- 8811118000 -- 1000   -- sip:172.24.1.73:8026                                                -- DEFAULT_FEATURE_TAG
+range_44 -> Phone20_1_N_Chat_UNBARRED_TERM2    -- 3322221000 -- 3000   -- sip:172.24.1.73:8026, sip:172.24.1.73:8026, sip:172.24.1.73:8026    -- DEFAULT_FEATURE_TAG
+range_45 -> Phone20_1_N_Chat_BARRED_TERM3      -- 3311119000 -- 1000   -- sip:172.24.1.73:8026, sip:172.24.1.73:8026, sip:172.24.1.73:8026    -- DEFAULT_FEATURE_TAG
+range_46 -> Phone20_1_N_Chat_BARRED_TERM3_BAR1 -- 7711119000 -- 1000   -- sip:172.24.1.73:8026                                                -- DEFAULT_FEATURE_TAG
+range_47 -> Phone20_1_N_Chat_BARRED_TERM3_BAR2 -- 8811119000 -- 1000   -- sip:172.24.1.73:8026                                                -- DEFAULT_FEATURE_TAG
+range_48 -> Phone20_1_N_Chat_UNBARRED_TERM3    -- 3322224000 -- 3000   -- sip:172.24.1.73:8026, sip:172.24.1.73:8026, sip:172.24.1.73:8026    -- DEFAULT_FEATURE_TAG
+range_49 -> Phone20_1_N_Chat_BARRED_ORIG       -- 3322214000 -- 1000   -- sip:172.24.1.73:8024, sip:172.24.1.73:8024, sip:172.24.1.73:8024    -- DEFAULT_FEATURE_TAG
+range_50 -> Phone20_1_N_Chat_UNBARRED_ORIG     -- 3322215000 -- 3000   -- sip:172.24.1.73:8024, sip:172.24.1.73:8024, sip:172.24.1.73:8024    -- DEFAULT_FEATURE_TAG
+range_51 -> Phone20_1_1_FT_BARRED_TERM         -- 3311103000 -- 1000   -- sip:172.24.3.51:8078, sip:172.24.3.51:8078, sip:172.24.3.51:8078    -- DEFAULT_FEATURE_TAG
+range_52 -> Phone20_1_1_FT_BARRED_TERM_BAR1    -- 7711103000 -- 1000   -- sip:172.24.3.51:8078                                                -- DEFAULT_FEATURE_TAG
+range_53 -> Phone20_1_1_FT_BARRED_TERM_BAR2    -- 8811103000 -- 1000   -- sip:172.24.3.51:8078                                                -- DEFAULT_FEATURE_TAG
+range_54 -> Phone20_1_1_FT_UNBARRED_TERM       -- 3322231000 -- 3000   -- sip:172.24.3.51:8078, sip:172.24.3.51:8078, sip:172.24.3.51:8078    -- DEFAULT_FEATURE_TAG
+range_55 -> Phone20_1_1_FT_BARRED_ORIG         -- 3322227000 -- 1000   -- sip:172.24.3.51:8078, sip:172.24.3.51:8078, sip:172.24.3.51:8078    -- DEFAULT_FEATURE_TAG
+range_56 -> Phone20_1_1_FT_UNBARRED_ORIG       -- 3322228000 -- 3000   -- sip:172.24.3.51:8078, sip:172.24.3.51:8078, sip:172.24.3.51:8078    -- DEFAULT_FEATURE_TAG
+range_57 -> Phone20_1_N_FT_BARRED_TERM1        -- 3311104000 -- 1000   -- sip:172.24.1.75:8026, sip:172.24.1.75:8026, sip:172.24.1.75:8026    -- DEFAULT_FEATURE_TAG
+range_58 -> Phone20_1_N_FT_BARRED_TERM1_BAR1   -- 7711104000 -- 1000   -- sip:172.24.1.75:8026                                                -- DEFAULT_FEATURE_TAG
+range_59 -> Phone20_1_N_FT_BARRED_TERM1_BAR2   -- 8811104000 -- 1000   -- sip:172.24.1.75:8026                                                -- DEFAULT_FEATURE_TAG
+range_60 -> Phone20_1_N_FT_UNBARRED_TERM1      -- 3322238000 -- 3000   -- sip:172.24.1.75:8026, sip:172.24.1.75:8026, sip:172.24.1.75:8026    -- DEFAULT_FEATURE_TAG
+range_61 -> Phone20_1_N_FT_BARRED_TERM2        -- 3311120000 -- 1000   -- sip:172.24.1.75:8026, sip:172.24.1.75:8026, sip:172.24.1.75:8026    -- DEFAULT_FEATURE_TAG
+range_62 -> Phone20_1_N_FT_BARRED_TERM2_BAR1   -- 7711120000 -- 1000   -- sip:172.24.1.75:8026                                                -- DEFAULT_FEATURE_TAG
+range_63 -> Phone20_1_N_FT_BARRED_TERM2_BAR2   -- 8811120000 -- 1000   -- sip:172.24.1.75:8026                                                -- DEFAULT_FEATURE_TAG
+range_64 -> Phone20_1_N_FT_UNBARRED_TERM2      -- 3322241000 -- 3000   -- sip:172.24.1.75:8026, sip:172.24.1.75:8026, sip:172.24.1.75:8026    -- DEFAULT_FEATURE_TAG
+range_65 -> Phone20_1_N_FT_BARRED_TERM3        -- 3311121000 -- 1000   -- sip:172.24.1.75:8026, sip:172.24.1.75:8026, sip:172.24.1.75:8026    -- DEFAULT_FEATURE_TAG
+range_66 -> Phone20_1_N_FT_BARRED_TERM3_BAR1   -- 7711121000 -- 1000   -- sip:172.24.1.75:8026                                                -- DEFAULT_FEATURE_TAG
+range_67 -> Phone20_1_N_FT_BARRED_TERM3_BAR2   -- 8811121000 -- 1000   -- sip:172.24.1.75:8026                                                -- DEFAULT_FEATURE_TAG
+range_68 -> Phone20_1_N_FT_UNBARRED_TERM3      -- 3322244000 -- 3000   -- sip:172.24.1.75:8026, sip:172.24.1.75:8026, sip:172.24.1.75:8026    -- DEFAULT_FEATURE_TAG
+range_69 -> Phone20_1_N_FT_BARRED_ORIG         -- 3322234000 -- 1000   -- sip:172.24.1.75:8024, sip:172.24.1.75:8024, sip:172.24.1.75:8024    -- DEFAULT_FEATURE_TAG
+range_70 -> Phone20_1_N_FT_UNBARRED_ORIG       -- 3322235000 -- 3000   -- sip:172.24.1.75:8024, sip:172.24.1.75:8024, sip:172.24.1.75:8024    -- DEFAULT_FEATURE_TAG
+range_71 -> Phone20_1_1_PM_BARRED_TERM         -- 3311105000 -- 1000   -- sip:172.24.3.51:8110, sip:172.24.3.51:8110, sip:172.24.3.51:8110    -- DEFAULT_FEATURE_TAG
+range_72 -> Phone20_1_1_PM_BARRED_TERM_BAR1    -- 7711105000 -- 1000   -- sip:172.24.3.51:8110                                                -- DEFAULT_FEATURE_TAG
+range_73 -> Phone20_1_1_PM_BARRED_TERM_BAR2    -- 8811105000 -- 1000   -- sip:172.24.3.51:8110                                                -- DEFAULT_FEATURE_TAG
+range_74 -> Phone20_1_1_PM_UNBARRED_TERM       -- 3322251000 -- 3000   -- sip:172.24.3.51:8110, sip:172.24.3.51:8110, sip:172.24.3.51:8110    -- DEFAULT_FEATURE_TAG
+range_75 -> Phone20_1_1_PM_BARRED_ORIG         -- 3322247000 -- 1000   -- sip:172.24.3.51:8110, sip:172.24.3.51:8110, sip:172.24.3.51:8110    -- DEFAULT_FEATURE_TAG
+range_76 -> Phone20_1_1_PM_UNBARRED_ORIG       -- 3322248000 -- 3000   -- sip:172.24.3.51:8110, sip:172.24.3.51:8110, sip:172.24.3.51:8110    -- DEFAULT_FEATURE_TAG
+range_77 -> Phone20_1_1_LM_BARRED_TERM         -- 3311106000 -- 1000   -- sip:172.24.3.231:8092, sip:172.24.3.231:8092, sip:172.24.3.231:8092 -- DEFAULT_FEATURE_TAG
+range_78 -> Phone20_1_1_LM_BARRED_TERM_BAR1    -- 7711106000 -- 1000   -- sip:172.24.3.231:8092                                               -- DEFAULT_FEATURE_TAG
+range_79 -> Phone20_1_1_LM_BARRED_TERM_BAR2    -- 8811106000 -- 1000   -- sip:172.24.3.231:8092                                               -- DEFAULT_FEATURE_TAG
+range_80 -> Phone20_1_1_LM_UNBARRED_TERM       -- 3322258000 -- 3000   -- sip:172.24.3.231:8092, sip:172.24.3.231:8092, sip:172.24.3.231:8092 -- DEFAULT_FEATURE_TAG
+range_81 -> Phone20_1_1_LM_BARRED_ORIG         -- 3322254000 -- 1000   -- sip:172.24.3.231:8092, sip:172.24.3.231:8092, sip:172.24.3.231:8092 -- DEFAULT_FEATURE_TAG
+range_82 -> Phone20_1_1_LM_UNBARRED_ORIG       -- 3322255000 -- 3000   -- sip:172.24.3.231:8092, sip:172.24.3.231:8092, sip:172.24.3.231:8092 -- DEFAULT_FEATURE_TAG
+range_83 -> 1-1_Chat_Store_ORIG                -- 2200140000 -- 100000 -- sip:172.24.1.76:6118                                                -- DEFAULT_FEATURE_TAG
+range_84 -> 1-1_FT_Store_ORIG                  -- 2200240000 -- 10000  -- sip:172.24.1.76:5114                                                -- DEFAULT_FEATURE_TAG
+range_85 -> 1-1_PM_Store_ORIG                  -- 2200250000 -- 10000  -- sip:172.24.1.76:5078                                                -- DEFAULT_FEATURE_TAG
+range_86 -> 1-1_LM_Store_ORIG                  -- 2200260000 -- 10000  -- sip:172.24.1.76:5030                                                -- DEFAULT_FEATURE_TAG
+range_87 -> 1-1_Chat_Fwd_TERM                  -- 4400000000 -- 100000 -- sip:172.24.1.76:5020                                                -- DEFAULT_FEATURE_TAG
+range_88 -> 1-1_Chat_Fwd_ORIG                  -- 2200000000 -- 100000 -- sip:172.24.1.76:6238                                                -- DEFAULT_FEATURE_TAG
+range_89 -> 1-1_FT_Fwd_TERM                    -- 4400100000 -- 10000 -- sip:172.24.1.76:5005                                                -- DEFAULT_FEATURE_TAG
+range_90 -> 1-1_FT_Fwd_ORIG                    -- 2200100000 -- 10000 -- sip:172.24.1.76:5114                                                -- DEFAULT_FEATURE_TAG
+range_91 -> 1-1_PM_Fwd_TERM                    -- 4400110000 -- 10000 -- sip:172.24.1.76:5120                                                -- DEFAULT_FEATURE_TAG
+range_92 -> 1-1_PM_Fwd_ORIG                    -- 2200110000 -- 10000 -- sip:172.24.1.76:5119                                                -- DEFAULT_FEATURE_TAG
+range_93 -> 1-1_LM_Fwd_TERM                    -- 4400120000 -- 10000 -- sip:172.24.1.76:5032                                                -- DEFAULT_FEATURE_TAG
+range_94 -> 1-1_LM_Fwd_ORIG                    -- 2200120000 -- 10000 -- sip:172.24.1.76:5030                                                -- DEFAULT_FEATURE_TAG
+range_95 -> SMSC-RMS_TERM                      -- 9299300000 -- 10000 -- sip:172.24.3.32:5042                                                -- DEFAULT_FEATURE_TAG
+range_96 -> MMSC-RMS_TERM                      -- 9399400000 -- 100000-- sip:172.24.3.32:5044                                                -- DEFAULT_FEATURE_TAG
+range_97 -> REG                                -- 1100020000 -- 10000 -- sip:172.24.3.231:2001                                               -- DEFAULT_FEATURE_TAG
+range_98 -> DEREG                              -- 1100000000 -- 10000 -- sip:172.24.3.231:2001                                               -- DEFAULT_FEATURE_TAG
+range_99 -> REREG                              -- 1100010000 -- 10000 -- sip:172.24.3.231:2001                                               -- DEFAULT_FEATURE_TAG

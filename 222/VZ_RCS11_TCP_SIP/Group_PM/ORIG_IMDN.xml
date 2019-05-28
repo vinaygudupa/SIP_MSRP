@@ -1,0 +1,30 @@
+<?xml version=1.0 encoding=ISO-8859-1 ?>
+<!DOCTYPE scenario SYSTEM sipp.dtd>
+
+<scenario name=Client with regexp scenario>
+
+
+  <recv request="MESSAGE" crlf="true">
+   <action>
+  <ereg regexp=".*" header="From:" search_in="hdr" assign_to="1" />
+  <ereg regexp=".*" header="To:" search_in="hdr" assign_to="2" />
+   </action>
+  </recv>
+
+
+  <send>
+    <![CDATA[
+
+      SIP/2.0 200 OK
+      [last_Via]
+      From:[$1]
+      To:[$2];tag=1234[call_number]
+      [last_Call-ID]
+      [last_CSeq]
+      Content-Length: 0
+
+    ]]>
+  </send>
+
+</scenario>
+

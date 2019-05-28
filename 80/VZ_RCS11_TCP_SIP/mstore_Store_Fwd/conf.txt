@@ -1,0 +1,8 @@
+LOCAL_HOST = fcff:1:256:172:24:3:0:34
+LOCAL_PORT = 8081
+REMOTE_HOST = fcff:1:256:172:24:3:0:190
+REMOTE_PORT = 8081
+NUM_OF_MSRP_EXPECTED_IN_SESSION_CHAT = 7
+Number_range_with_stored_messages_starts_with = 144
+GroupChat_Number_range = 14400000000-14400099999
+TIMEOUT = 5

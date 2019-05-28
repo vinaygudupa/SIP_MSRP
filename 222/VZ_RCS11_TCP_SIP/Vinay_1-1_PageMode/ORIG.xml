@@ -1,0 +1,68 @@
+<?xml version=1.0 encoding=ISO-8859-1 ?>
+<!DOCTYPE scenario SYSTEM sipp.dtd>
+
+<scenario name=Client with regexp scenario>
+
+<nop>
+  <action>
+    <assignstr assign_to="Number" value="[field0]" />
+    <ereg regexp="([0-9]{8})([0-9]{2})" search_in="var" assign_to="FullNum,8Digit,2Digit" variable="Number" />
+  </action>
+</nop>
+
+  <send retrans="500">
+    <![CDATA[
+      MESSAGE sip:+1[field1]@rcse-dls-capacity.mavenir.lab SIP/2.0
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      From: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>;tag=[pid][call_number]
+      To: <sip:+1[field1]@rcse-dls-capacity.mavenir.lab;user=phone>
+      Call-ID: [clock_tick][branch]///[call_id]
+      User-Agent: CPM-client/OMA1.0 MSP/1.0
+      CSeq: [cseq] MESSAGE
+      Contact: <sip:[local_ip]:[local_port]>;+sip.instance="<urn:gsma:imei:[$8Digit]-[$2Digit]0000-0>";+g.3gpp.icsi-ref="urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg"
+      Route: <sip:rcse-dls-capacity.mavenir.lab:5060;lr>
+      Route: <sip:[local_ip]:[field2];lr>
+      Supported: join,replaces
+      Allow: INVITE,UPDATE,ACK,CANCEL,BYE,NOTIFY,MESSAGE
+      P-Visited-Network-ID: rcse-dls-capacity.mavenir.lab
+      P-Access-Network-Info: 3GPP-E-UTRAN-FDD
+      Max-Forwards: 68
+      Subject: 1234
+      Contribution-ID: efgh-456-[call_id]
+      Conversation-ID: ace-135-[call_id]
+      Accept-Contact: *;+g.3gpp.icsi-ref="urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg"
+      P-Asserted-Identity: "+1[field0]" <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>
+      P-Charging-Function-Addresses: ecf="aaa://mavenir.lab";ecf="aaa://mavenir.lab"
+      P-Served-User: <sip:+1[field1]@rcse-dls-capacity.mavenir.lab>;sescase=term;regstate=reg
+      Content-Type: message/cpim
+      Content-Length:[len]
+
+        From: <sip:+1[field0]@rcse-dls-capacity.mavenir.lab>
+        To: <sip:+1[field1]@rcse-dls-capacity.mavenir.lab>
+        DateTime: 2015-11-30T17:51:21+05:30
+        Content-type: text/plain;
+        NS: imdn <urn:ietf:params:imdn>
+	imdn.Message-ID:[field0][call_id]Vinay
+	imdn.Disposition-Notification: positive-delivery,display
+        Content-length: 200
+
+        PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE1 PAGEMODE11 
+
+    ]]>
+  </send>
+
+  <recv response="200" rrs="true" next="End">
+  </recv>
+
+<send>
+   <![CDATA[
+  200 OK 
+   [$FullNum]
+    ]]>
+</send>
+
+<label id="End">
+
+</scenario>
+
+

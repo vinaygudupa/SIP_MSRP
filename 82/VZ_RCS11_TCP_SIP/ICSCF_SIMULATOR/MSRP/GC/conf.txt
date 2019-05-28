@@ -1,0 +1,11 @@
+LOCAL_HOST = 127.0.0.1
+UDP_PORT_MO = 5555
+UDP_PORT_MT = 8001 
+RMS_HOST = fcff:1:256:172:24:3:0:190
+msrp_message_to_be_sent = 11
+task_timeout = 311
+delay_between_successive_messages = 0.1
+fqdn = rcse-dls-capacity.mavenir.lab
+app_serv_port_start = [10400,4000,7000,10000,10600,2400,2600,10800,4400,4600,7200,7400]
+app_serv_port_range = 200
+msrp_data_length = 200

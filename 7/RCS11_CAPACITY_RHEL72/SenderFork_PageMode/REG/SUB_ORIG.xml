@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE scenario SYSTEM "sipp.dtd">
+
+<scenario name="Basic Sipstone UAC">
+
+  <recv request="SUBSCRIBE" rrs="true">
+   <action>
+    <ereg regexp="<(.*)>" header="Contact: " search_in="hdr" assign_to="1,10" />
+    <ereg regexp="sip:\+1([0-9]{10})@" search_in="msg" assign_to="URI,Number" />
+    <ereg regexp=".*" header="To: " search_in="hdr" assign_to="2" />
+    <ereg regexp=".*" header="Expires: " search_in="hdr" assign_to="4" />
+    <ereg regexp=".*" header="From: " search_in="hdr" assign_to="3" />
+   </action>
+  </recv>
+
+<nop>
+  <action>
+    <ereg regexp="([0-9]{8})([0-9]{2})" search_in="var" assign_to="FullNum,8Digit,2Digit" variable="Number" />
+  </action>
+</nop>
+
+  <send>
+    <![CDATA[
+
+      SIP/2.0 200 OK
+      [last_Via:]
+      [last_From:]
+      To: [$2];tag=[call_number]
+      [last_Call-ID:]
+      [last_Cseq:]
+      Contact: <sip:[local_ip]:[local_port]>
+      Expires: [$4] 
+      Content-Length:0
+
+    ]]>
+  </send>
+
+  <send>
+    <![CDATA[
+
+      NOTIFY [$10] SIP/2.0
+      Via: SIP/2.0/[transport] sipp1378.mavenir.lab:[local_port];branch=[branch]
+      From:[$2];tag=[call_number]
+      To:[$3]
+      Contact: <sip:[local_ip]:[local_port]>
+      [last_Call-ID:]
+      Event: reg
+      CSeq: [cseq] NOTIFY
+      Subscription-State: terminated;reason=timeout
+      Content-Type: application/reginfo+xml
+      [last_P-Charging-Vector]
+      Content-Length:[len]
+
+      <?xml version="1.0"?>
+      <reginfo xmlns="urn:ietf:params:xml:ns:reginfo" version="1.0" state="full">
+      <registration aor="sip:+1[$Number]@rcse-dls-capacity.mavenir.lab" id="1" state="active">
+      <contact id="1" state="active" event="registered">
+      <uri>sip:+1[$Number]@[local_ip]:[field1];transport=UDP</uri>
+      <unknown-param name="+g.3gpp.cs-voice"></unknown-param>
+      <unknown-param name="+g.3gpp.icsi-ref">"urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.session,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.filetransfer,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.largemsg"</unknown-param>
+      <unknown-param name="+g.oma.sip-im"></unknown-param>
+      <unknown-param name="+sip.instance">"&lt;urn:gsma:imei:[$8Digit]-[$2Digit]0000-0&gt;"</unknown-param>
+      </contact>
+      </registration>
+      <registration aor="tel:+1[$Number]" id="2" state="active">
+      <contact id="1" state="active" event="registered">
+      <uri>sip:+1[$Number]@[local_ip]:[field1];transport=UDP</uri>
+      <unknown-param name="+g.3gpp.cs-voice"></unknown-param>
+      <unknown-param name="+g.3gpp.icsi-ref">"urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.session,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.filetransfer,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.msg,urn%3Aurn-7%3A3gpp-service.ims.icsi.oma.cpm.largemsg"</unknown-param>
+      <unknown-param name="+g.oma.sip-im"></unknown-param>
+      <unknown-param name="+sip.instance">"&lt;urn:gsma:imei:[$8Digit]-[$2Digit]0000-0&gt;"</unknown-param>
+      </contact>
+      </registration>
+      </reginfo>
+    ]]>
+  </send>
+
+  <recv response="200" rrs="true" next="End">
+  </recv>
+
+<send>
+   <![CDATA[
+  200 OK 
+   [$1][$URI][$FullNum]
+    ]]>
+</send>
+<label id="End"/>
+</scenario>
